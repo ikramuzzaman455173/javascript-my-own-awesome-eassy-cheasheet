@@ -351,6 +351,7 @@ The splice() method overwrites the original array.
 
 ```
 /**
+ const months = ['Jan', 'march', 'April', 'June', 'July']
  * add a Dec of the end of a array
  * what is the return value of splice method
  * update march March (update)
