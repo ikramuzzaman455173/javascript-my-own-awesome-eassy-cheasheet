@@ -398,10 +398,175 @@ console.log('Delete Months: '+deleteMonth);
 
 
 
+#### [Go to top:arrow_up: ](#top)
+
+<a name="a-from"></a>
+
+### Javascript Array.from()
+
+
+> Definition and Usage
+The Array.from() method returns an array from any object with a length property.
+The Array.from() method returns an array from any iterable object.
+
+#### Disclaimer
+
+> Array.from()
+Array.from() is a static property of the JavaScript Array object.
+You can only use it as Array.from().
+Using x.from(), where x is an array will return undefined.
+
+
+```js
+const text = 'Hello'
+let anotherText = Array.from(text)
+console.log(anotherText);//[ 'H', 'e', 'l', 'l', 'o' ]
+
+```
+
+
+#### [Go to top:arrow_up: ](#top)
+
+<a name="a-arrayForeach"></a>
+
+### Javascript Array.forEach()
+
+> Definition and Usage
+The forEach() method calls a function for each element in an array.
+The forEach() method is not executed for empty elements.
+
+
+```js
+const actors = [
+  { name: 'actor1', payment: 250 },
+  { name: 'actor2', payment: 300 },
+]
+actors.forEach(function (actor) {
+  actor.payment-=50
+console.log(actor.payment);//only show all payments
+console.log(actor.name);//only show all names
+})
+console.log(actors);// [ { name: 'actor1', payment: 200 }, { name: 'actor2', payment: 250 } ]
+```
 
 
 
 
+#### [Go to top:arrow_up: ](#top)
+
+<a name="a-filter"></a>
+
+### Javascript Array.filter()
+
+> The filter() method creates a new array filled with elements that pass a test provided by a function.
+The filter() method does not execute the function for empty elements.
+The filter() method does not change the original array.
+
+
+```js
+const students = [
+  { name: 'sakib', mark: 40 },
+  { name: 'kabir', mark: 25 },
+  { name: 'jamal', mark: 30 }
+]
+
+// console.log(students);
+const failedStudents = students.filter(function (student) {
+  return student.mark <= 32;
+})
+console.log(failedStudents);//[ { name: 'kabir', mark: 25 }, { name: 'jamal', mark: 30 } ]
+
+// same example extra short
+const failedStudent = students.filter((student) => student.mark <= 32)
+// console.log(failedStudent);
+const failedStudented = students.filter((student) => student.name == 'sakib')
+
+console.log(failedStudented);//[ { name: 'sakib', mark: 40 } ]
+```
+
+
+#### [Go to top:arrow_up: ](#top)
+
+<a name="a-map"></a>
+
+### Javascript Array.map()
+
+
+> map() creates a new array from calling a function for every array element.
+map() calls a function once for each element in an array.
+map() does not execute the function for empty elements.
+map() does not change the original array.
+
+
+```js
+const persons = [
+  { fname: 'Md.', lname: 'kader' },
+  { fname: 'Md.', lname: 'shakil' },
+  { fname: 'Md.', lname: 'kawsar khan' },
+  { fname: 'Sirajul:', lname: 'Islam' },
+  { fname: 'Mr:', lname: 'John' },
+]
+
+const person = persons.map((user) => {
+  return {fullname:user.fname+' '+user.lname}//This Line Of Code Best Pactises
+  return { fullName: `${user.fname} ${user.lname}` }
+})
+console.log(person);
+
+// Another array.map() example
+const numbers = [4, 9, 16, 36];
+const newArr = numbers.map(Math.sqrt)//Math.sqrt() javascript Built in function
+console.log(numbers);
+console.log(newArr);
+const num = [65, 44, 12, 4];
+const newArrs = numbers.map(myFunction)
+
+function myFunction(num) {
+  return num * 10;
+}
+console.log(num);
+console.log(newArrs);//[40,90,160,360]
+```
+
+
+#### [Go to top:arrow_up: ](#top)
+
+<a name="a-reduce"></a>
+
+### Javascript Array.reduce()
+
+
+> The reduce() method executes a reducer function for array element.
+The reduce() method returns a single value: the function's accumulated result.
+The reduce() method does not execute the function for empty array elements.
+The reduce() method does not change the original array.
+
+
+```js
+const movies = [
+  { name: 'Star wars', budget: 350 },
+  { name: 'Spider man 3', budget: 450 },
+  { name: 'Super man', budget: 200 }
+]
+console.log(movies);
+let total = 0;
+movies.forEach((movie) => total += movie.budget)
+console.log('All Movies Total Budget:', total);//All Movies Total Budget: 1000
+
+// Same Problem Best Pactise Use array.reduce() method
+
+const totalBudget = movies.reduce((total, movie) => {
+  return total += movie.budget
+}, 0)
+console.log('All Movies Total Budget:', totalBudget, '$Doller')//All Movies Total Budget: 1000 $Doller
+
+const arr = [1, 2, 3]
+const result = arr.reduce((acc, curr) => acc + curr, 0)
+// 1 + 2 + 3 = 6
+console.log('The Result Is:' + result)//The Result Is:6
+```
+
+#### [Best Pactises Site Array.reduce() method:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)
 
 
 
