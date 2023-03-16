@@ -427,7 +427,7 @@ console.log(anotherText);//[ 'H', 'e', 'l', 'l', 'o' ]
 
 #### [Go to top:arrow_up: ](#top)
 
-<a name="a-arrayForeach"></a>
+<a name="a-forEach"></a>
 
 ### Javascript Array.forEach()
 
@@ -567,8 +567,6 @@ console.log('The Result Is:' + result)//The Result Is:6
 ```
 
 #### [Best Pactises Site Array.reduce() method:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)
-
-
 
 
 
